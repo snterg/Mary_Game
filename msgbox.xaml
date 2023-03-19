@@ -1,0 +1,28 @@
+﻿<Window x:Class="Mary_Game.msgbox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mary_Game"
+        mc:Ignorable="d"
+        Title="msgbox" Height="150" Width="500" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid>
+            <Border Width="auto" Height="auto" BorderBrush="LightGreen" BorderThickness="2"
+                CornerRadius="50,0,50,50">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="#e7ebf7" Offset="0.0"></GradientStop>
+                                <GradientStop Color="#cee3ff" Offset="0.5"></GradientStop>
+                            </GradientStopCollection>
+                        </GradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Grid>
+        <TextBlock x:Name="text" Text="" FontWeight="Bold" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="OK" Content="OK" Background="LightGreen" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="OK_Click"/>
+    </Grid>
+</Window>

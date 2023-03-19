@@ -1,0 +1,305 @@
+﻿<Window x:Class="Mary_Game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mary_Game"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Палитра" Height="670" Width="1000" WindowStartupLocation="CenterScreen" SizeChanged="Window_SizeChanged" ResizeMode="NoResize"  AllowsTransparency="True" WindowStyle="None" Background="Transparent" MouseLeftButtonDown="Window_MouseLeftButtonDown" Icon="Pict/icons8-курсы-_мама-и-я_-96.png" >
+    <Window.Resources>
+        <LinearGradientBrush x:Key="gradientStyle" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="#c6e4ee" Offset="0"></GradientStop>
+            <GradientStop Color="#c6e4ee" Offset="0.4"></GradientStop>
+            <GradientStop Color="#fed1ae " Offset="0.6"></GradientStop>
+            <GradientStop Color="#faa0b9 " Offset="0.7"></GradientStop>
+            <GradientStop Color="#cb7dcb " Offset="0.8"></GradientStop>
+            <GradientStop Color="#757ecb  " Offset="1"></GradientStop>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border Name="newBorder" CornerRadius="50,50,0,0" Opacity="1"  Background="LightGreen">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--Заголовок-->
+                   
+                    <TextBlock x:Name="header" Text="Палитра" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Panel.ZIndex="3" >
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#c6e4ee" Offset="0"></GradientStop>
+                                <GradientStop Color="#c6e4ee" Offset="0.4"></GradientStop>
+                                <GradientStop Color="#fed1ae " Offset="0.6"></GradientStop>
+                                <GradientStop Color="#faa0b9 " Offset="0.7"></GradientStop>
+                                <GradientStop Color="#cb7dcb " Offset="0.8"></GradientStop>
+                                <GradientStop Color="#757ecb  " Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock x:Name="header1" Text="Палитра" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Foreground="DarkOliveGreen" Margin="-5,0,0,0" />
+                    <materialDesign:PackIcon Kind="Palette"  Width="50" Height="50" HorizontalAlignment="Center" Margin="0,0,-200,0" Foreground="{StaticResource gradientStyle}" Panel.ZIndex="3" />
+                    <materialDesign:PackIcon Kind="Palette"  Width="50" Height="50" HorizontalAlignment="Center" Margin="0,0,-205,0" Foreground="DarkOliveGreen" />
+                    <Image Source="/Pict/19143753_986959974739904_2262495137224033922_o.png" Width="50" HorizontalAlignment="Right" Margin="0,0,50,0" />
+                    <!--Основное содержание-->
+                    <Border Grid.Row="1">
+                        <AdornerDecorator>
+                            <ContentPresenter />
+                        </AdornerDecorator>
+                    </Border>
+                    <!--Элемент захвата и изменения размера - работает только для прямоугольных окон-->
+                    <ResizeGrip Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            Visibility="Collapsed" IsTabStop="False" />
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+    <Grid  Background="PaleGreen" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="/Pict/fon.jpg" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="4" Stretch="Fill" Opacity="0.3" />
+        <Border x:Name="BLR_BR" Grid.Column="0" Grid.Row="0">
+            <Image x:Name="BLR" Grid.Column="0" Grid.Row="0" Source="Pict/flag-resp-belarus-1.jpg"  Margin="10,10,10,10" MouseDown="BLR_MouseDown" HorizontalAlignment="Right"  />
+        </Border>
+        <Border x:Name="RUS_BR" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2">
+            <Image x:Name="RUS" Grid.Column="1" Grid.Row="0" Source="Pict/Flag_of_Russia.svg.png" Margin="10,10,10,10" MouseDown="RUS_MouseDown"  />
+        </Border>
+        <Border x:Name="USA_BR" Grid.Column="3" Grid.Row="0">
+            <Image x:Name="US" Grid.Column="2" Grid.Row="0" Source="Pict/flag-ssha-1847–1848-1024x539.png"  Margin="10,10,10,10" MouseDown="US_MouseDown" HorizontalAlignment="Left" />
+        </Border>
+        <StackPanel x:Name="figure" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Left" Margin="50,0,0,-0.333">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="circle_button" Background="LightGray" Width="100" Height="100" Margin="5,5,5,5" Click="circle_button_Click"  >
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="Circle" x:Name="circle"
+                       Foreground="Gray"/>
+                </Button>
+
+                <Button x:Name="square_button"  Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="square_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="rectangle" x:Name="rectangle"
+                       Foreground="Gray"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="romb_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="romb_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="rhombus" x:Name="rhombus"
+                       Foreground="Gray"/>
+                </Button>
+                <Button x:Name="star_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="star_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="Star" x:Name="Star"
+                       Foreground="Gray"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="strel_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="strel_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="ArrowTop" x:Name="ArrowBottom" 
+                       Foreground="Gray"/>
+                </Button>
+                <Button x:Name="oval_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="oval_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="Ellipse" x:Name="Ellipse"
+                       Foreground="Gray"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="triangle_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="triangle_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="Triangle" x:Name="Triangle"
+                       Foreground="Gray"/>
+                </Button>
+                <Button x:Name="fiveugol_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="fiveugol_button_Click">
+                    <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="pentagon" x:Name="pentagon"
+                       Foreground="Gray"/>
+                </Button>
+            </StackPanel>
+            <Button x:Name="kvadr_button" Foreground="Transparent" Background="LightGray" Width="100" Height="100"  Margin="5,5,5,5" Click="kvadr_button_Click">
+                <materialDesign:PackIcon  Width="50" Height="50" Margin="5" Kind="Square" x:Name="Square"
+                       Foreground="Gray"/>
+            </Button>
+
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" Margin="0,100,0,-0.333">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="red_clr_button"  Width="80" Height="80" Margin="5,5,5,5" Click="red_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Red" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="orange_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="orange_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Orange" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="yellow_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="yellow_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Yellow" Width="80" Height="80" ></Ellipse>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="green_clr_button"  Width="80" Height="80" Margin="5,5,5,5" Click="green_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="green" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="lightbl_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="lightbl_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="SkyBlue" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="blue_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="blue_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Blue" Width="80" Height="80" ></Ellipse>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="violet_clr_button"  Width="80" Height="80" Margin="5,5,5,5" Click="violet_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Purple" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="white_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="white_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="White" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="brown_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="brown_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Firebrick" Width="80" Height="80" ></Ellipse>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="gray_clr_button"  Width="80" Height="80" Margin="5,5,5,5" Click="gray_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Gray" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="black_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="black_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+
+                                <Ellipse Fill="Black" Width="80" Height="80" ></Ellipse>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="pink_clr_button"  Width="80" Height="80"  Margin="5,5,5,5" Click="pink_clr_button_Click">
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Grid>
+                                <Ellipse Fill="DeepPink" Width="80" Height="80" ></Ellipse>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <Canvas x:Name="picturepanel" Grid.Column="1" Grid.Row="1"   Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0,0,0,181.667" ></Canvas>
+        <Image x:Name="imgpanel" Grid.Column="1" Grid.Row="1"   Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0,0,0,181.667" Visibility="Hidden" Source="{Binding Path=static_class.filesource}" />
+        <Button x:Name="exit"  Background="Transparent" Width="150" Height="150" Grid.Column="2" Panel.ZIndex="10" Grid.Row="3"  Click="exit_Click" BorderThickness="0" Margin="32,16.333,92,15.667">
+            <Button.ToolTip>
+                <ToolTip FontSize="36">
+                    Закрыть программу
+                </ToolTip>
+            </Button.ToolTip>
+            <materialDesign:PackIcon x:Name="butexit" Kind="CloseOctagon" Width="150" Height="150" Foreground="DarkRed" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="3" MouseEnter="PackIcon_MouseEnter" MouseLeave="butexit_MouseLeave" />
+        </Button>
+        <Button x:Name="test" Background="Transparent"  Width="100" Height="100" Grid.Column="3" Grid.Row="4" Margin="-150,90,0,0" BorderThickness="0" Panel.ZIndex="3" Click="test_Click" >
+            <materialDesign:PackIcon Kind="MicrosoftXboxGamepad" Width="70" Height="70"  Foreground="DarkOliveGreen"/>
+            <Button.ToolTip>
+                <ToolTip FontSize="36">
+                   Тест по геометрическим фигурам
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Button x:Name="about" Background="Transparent"  Width="100" Height="100" Grid.Column="3" Grid.Row="4" Margin="0,90,0,0" BorderThickness="0" Panel.ZIndex="3" Click="about_Click"  >
+            <materialDesign:PackIcon Kind="Information" Width="70" Height="70"  Foreground="DarkOliveGreen"/>
+            <Button.ToolTip>
+                <ToolTip FontSize="36">
+                   О программе
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Button x:Name="pictest" Background="Transparent"  Width="100" Height="100" Grid.Column="3" Grid.Row="4" Margin="150,90,0,0" BorderThickness="0" Panel.ZIndex="3" Click="pictest_Click"  >
+            <materialDesign:PackIcon Kind="PictureInPictureBottomRightOutline" Width="70" Height="70"  Foreground="DarkOliveGreen"/>
+            <Button.ToolTip>
+                <ToolTip FontSize="36">
+                    Тест по картинкам на геометрических фигурах
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <TextBlock x:Name="compcont" Grid.Column="2" Text="" FontSize="24" Grid.Row="2" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

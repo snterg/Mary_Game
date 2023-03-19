@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{515883C4-65CC-414C-A86C-BBC93A68BF1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mary_Game</RootNamespace>
+    <AssemblyName>Mary_Game</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-курсы-_мама-и-я_-96.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=2.0.1.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.2.0.1\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>packages\WpfAnimatedGif.2.0.0\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="msgbox.xaml.cs">
+      <DependentUpon>msgbox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Picture_test_view.xaml.cs">
+      <DependentUpon>Picture_test_view.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="statics_class.cs" />
+    <Compile Include="test_view.xaml.cs">
+      <DependentUpon>test_view.xaml</DependentUpon>
+    </Compile>
+    <Page Include="about.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="about.xaml.cs">
+      <DependentUpon>about.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="msgbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Picture_test_view.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="test_view.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\flag-resp-belarus-1.jpg" />
+    <Resource Include="Pict\flag-ssha-1847–1848-1024x539.png" />
+    <Resource Include="Pict\Flag_of_Russia.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\icons8-курсы-_мама-и-я_-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\fon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\V1Ax.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\герб нашей школы.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pict\img1.jpg" />
+    <Resource Include="Pict\r1.png" />
+    <Resource Include="icons8-курсы-_мама-и-я_-96.ico" />
+    <SplashScreen Include="Pict\splash_1.png" />
+    <Resource Include="Pict\19143753_986959974739904_2262495137224033922_o.png" />
+    <Content Include="Sound\Colors\BLR\аранжавая.wav" />
+    <Content Include="Sound\Colors\BLR\аранжавы.wav" />
+    <Content Include="Sound\Colors\BLR\белая.wav" />
+    <Content Include="Sound\Colors\BLR\белы.wav" />
+    <Content Include="Sound\Colors\BLR\блакитная.wav" />
+    <Content Include="Sound\Colors\BLR\блакитны.wav" />
+    <Content Include="Sound\Colors\BLR\жоутая.wav" />
+    <Content Include="Sound\Colors\BLR\жоуты.wav" />
+    <Content Include="Sound\Colors\BLR\зялёная.wav" />
+    <Content Include="Sound\Colors\BLR\зялёны.wav" />
+    <Content Include="Sound\Colors\BLR\карычневая.wav" />
+    <Content Include="Sound\Colors\BLR\карычневы.wav" />
+    <Content Include="Sound\Colors\BLR\ружовая.wav" />
+    <Content Include="Sound\Colors\BLR\ружовы.wav" />
+    <Content Include="Sound\Colors\BLR\сини.wav" />
+    <Content Include="Sound\Colors\BLR\синяя.wav" />
+    <Content Include="Sound\Colors\BLR\фиялетавая.wav" />
+    <Content Include="Sound\Colors\BLR\фиялетавы.wav" />
+    <Content Include="Sound\Colors\BLR\чорная.wav" />
+    <Content Include="Sound\Colors\BLR\чорны.wav" />
+    <Content Include="Sound\Colors\BLR\чырвоная.wav" />
+    <Content Include="Sound\Colors\BLR\чырвоны.wav" />
+    <Content Include="Sound\Colors\BLR\шэрая.wav" />
+    <Content Include="Sound\Colors\BLR\шэры.wav" />
+    <Content Include="Sound\Colors\RUS\белая.wav" />
+    <Content Include="Sound\Colors\RUS\белый.wav" />
+    <Content Include="Sound\Colors\RUS\голубая.wav" />
+    <Content Include="Sound\Colors\RUS\голубой.wav" />
+    <Content Include="Sound\Colors\RUS\жёлтая.wav" />
+    <Content Include="Sound\Colors\RUS\жёлтый.wav" />
+    <Content Include="Sound\Colors\RUS\зелёная.wav" />
+    <Content Include="Sound\Colors\RUS\зелёный.wav" />
+    <Content Include="Sound\Colors\RUS\коричневая.wav" />
+    <Content Include="Sound\Colors\RUS\коричневый.wav" />
+    <Content Include="Sound\Colors\RUS\красная.wav" />
+    <Content Include="Sound\Colors\RUS\красный.wav" />
+    <Content Include="Sound\Colors\RUS\оранжевая.wav" />
+    <Content Include="Sound\Colors\RUS\оранжевый.wav" />
+    <Content Include="Sound\Colors\RUS\розовая.wav" />
+    <Content Include="Sound\Colors\RUS\розовый.wav" />
+    <Content Include="Sound\Colors\RUS\серая.wav" />
+    <Content Include="Sound\Colors\RUS\серый.wav" />
+    <Content Include="Sound\Colors\RUS\синий.wav" />
+    <Content Include="Sound\Colors\RUS\синяя.wav" />
+    <Content Include="Sound\Colors\RUS\фиолетовая.wav" />
+    <Content Include="Sound\Colors\RUS\фиолетовый.wav" />
+    <Content Include="Sound\Colors\RUS\черная.wav" />
+    <Content Include="Sound\Colors\RUS\черный.wav" />
+    <Content Include="Sound\Colors\US\black.aac" />
+    <Content Include="Sound\Colors\US\blue.aac" />
+    <Content Include="Sound\Colors\US\brown.aac" />
+    <Content Include="Sound\Colors\US\gray.aac" />
+    <Content Include="Sound\Colors\US\green.aac" />
+    <Content Include="Sound\Colors\US\light_blue.aac" />
+    <Content Include="Sound\Colors\US\orange.aac" />
+    <Content Include="Sound\Colors\US\pink.aac" />
+    <Content Include="Sound\Colors\US\purple.aac" />
+    <Content Include="Sound\Colors\US\red.aac" />
+    <Content Include="Sound\Colors\US\red.mp3" />
+    <Content Include="Sound\Colors\US\white.aac" />
+    <Content Include="Sound\Colors\US\yellow.aac" />
+    <Content Include="Sound\Figures\BLR\зорка.wav" />
+    <Content Include="Sound\Figures\BLR\квадрат.wav" />
+    <Content Include="Sound\Figures\BLR\круг.wav" />
+    <Content Include="Sound\Figures\BLR\овал.wav" />
+    <Content Include="Sound\Figures\BLR\прастакутник.wav" />
+    <Content Include="Sound\Figures\BLR\пятикутник.wav" />
+    <Content Include="Sound\Figures\BLR\ромб.wav" />
+    <Content Include="Sound\Figures\BLR\стрэлка.wav" />
+    <Content Include="Sound\Figures\BLR\трохкутник.wav" />
+    <Content Include="Sound\Figures\RUS\звезда.wav" />
+    <Content Include="Sound\Figures\RUS\квадрат.wav" />
+    <Content Include="Sound\Figures\RUS\круг.wav" />
+    <Content Include="Sound\Figures\RUS\овал.wav" />
+    <Content Include="Sound\Figures\RUS\прямоугольник.wav" />
+    <Content Include="Sound\Figures\RUS\пятиугольник.wav" />
+    <Content Include="Sound\Figures\RUS\ромб.wav" />
+    <Content Include="Sound\Figures\RUS\стрелка.wav" />
+    <Content Include="Sound\Figures\RUS\треугольник.wav" />
+    <Content Include="Sound\Figures\US\arrow.aac" />
+    <Content Include="Sound\Figures\US\circle.aac" />
+    <Content Include="Sound\Figures\US\oval.aac" />
+    <Content Include="Sound\Figures\US\pentagon.aac" />
+    <Content Include="Sound\Figures\US\rectangle.aac" />
+    <Content Include="Sound\Figures\US\rombes.aac" />
+    <Content Include="Sound\Figures\US\square.aac" />
+    <Content Include="Sound\Figures\US\star.aac" />
+    <Content Include="Sound\Figures\US\triangle.aac" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
